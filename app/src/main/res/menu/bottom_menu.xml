@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/income_page"
+        android:title="@string/label_income"
+        android:icon="@drawable/income" />
+    <item
+        android:id="@+id/expense_page"
+        android:title="@string/label_expense"
+        android:icon="@drawable/expense" />
+
+    <item
+        android:title=""/>
+
+    <item
+        android:id="@+id/budget_page"
+        android:title="@string/label_budget"
+        android:icon="@drawable/asset_budget"/>
+    <item
+        android:id="@+id/debts_page"
+        android:title="@string/label_debts"
+        android:icon="@drawable/asset_debt"/>
+</menu>

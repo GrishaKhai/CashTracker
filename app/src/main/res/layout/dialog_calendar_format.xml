@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvDialogTimeInterval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/choose_time_interval"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llDialogButtonsBlock1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTimeInterval">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogInterval1Day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:height="90dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:tag="@string/today"
+                android:text="@string/today"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogInterval1Week"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:height="90dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:text="@string/one_week"
+                android:tag="@string/one_week"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDialogButtonsBlock2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDialogButtonsBlock1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogInterval1Month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:height="90dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:text="@string/one_month"
+                android:tag="@string/one_month"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogInterval1Year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:height="90dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:text="@string/one_year"
+                android:tag="@string/one_year"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDialogEnterDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/select_date_or_time_interval"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDialogButtonsBlock2" />
+
+        <LinearLayout
+            android:id="@+id/llDialogButtonsBlock3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogEnterDate">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogChooseDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:width="0dp"
+                android:height="70dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:text="@string/сhoose_day"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogDateRange"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:height="70dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="@color/light_gray"
+                android:text="@string/date_range"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDialogAllTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="220dp"
+            android:height="70dp"
+            android:backgroundTint="@color/light_gray"
+            android:text="@string/all_time"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDialogButtonsBlock3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

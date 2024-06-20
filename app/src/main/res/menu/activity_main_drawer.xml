@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/asset_house"
+            android:title="Головна" />
+        <item
+            android:id="@+id/nav_accounts"
+            android:icon="@drawable/all_accounts"
+            android:title="Акаунти" />
+        <item
+            android:id="@+id/nav_categories_income"
+            android:icon="@drawable/income"
+            android:iconTint="@color/green"
+            android:title="Категорії доходу" />
+        <item
+            android:id="@+id/nav_categories_expense"
+            android:icon="@drawable/expense"
+            android:iconTint="@color/dark_red"
+            android:title="Категорії витрат" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_reminder"
+            android:title="Нагадування" />
+        <item
+            android:id="@+id/nav_currencies"
+            android:icon="@drawable/ic_dollar"
+            android:title="Валюти" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Налаштування" />
+    </group>
+</menu>

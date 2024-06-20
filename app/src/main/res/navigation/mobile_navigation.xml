@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home"
+    >
+<!--    app:startDestination="@+id/nav_home"-->
+
+    <fragment
+        android:id="@+id/nav_accounts"
+        android:name="com.proger.cashtracker.ui.screens.account.AccountsFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_view_all_notes" />
+    <fragment
+        android:id="@+id/nav_categories_income"
+        android:name="com.proger.cashtracker.ui.screens.category.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_view_all_notes" >
+        <argument
+            android:name="mode"
+            app:argType="string"
+            android:defaultValue="income" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_categories_expense"
+        android:name="com.proger.cashtracker.ui.screens.category.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_view_all_notes">
+        <argument
+            android:name="mode"
+            app:argType="string"
+            android:defaultValue="expense" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_currencies"
+        android:name="com.proger.cashtracker.ui.screens.currency.ViewAllCurrenciesFragment"
+        android:label="ViewAllCurrenciesFragment"
+        tools:layout="@layout/fragment_view_transaction"/>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.proger.cashtracker.ui.screens.home.MainFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_nav_home_to_addEditExpenseTransactionFragment"
+            app:destination="@id/addEditExpenseTransactionFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_viewAllExpensesFragment"
+            app:destination="@id/viewAllExpensesFragment" />
+
+        <action
+            android:id="@+id/action_nav_home_to_addEditIncomeTransactionFragment"
+            app:destination="@id/addEditIncomeTransactionFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_viewAllIncomesFragment"
+            app:destination="@id/viewAllIncomesFragment" />
+
+        <action
+            android:id="@+id/action_nav_home_to_addEditBudgetFragment"
+            app:destination="@id/addEditBudgetFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_viewAllBudgetsFragment"
+            app:destination="@id/viewAllBudgetsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_viewAllDebtsFragment"
+            app:destination="@id/viewAllDebtsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_addEditDebtFragment"
+            app:destination="@id/addEditDebtFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_viewPayForDebtFragment"
+            app:destination="@id/viewPayForDebtFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditExpenseTransactionFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.expense.addEdit.AddEditExpenseTransactionFragment"
+        android:label="fragment_add_edit_expense_transaction"
+        tools:layout="@layout/fragment_add_edit_transaction">
+        <argument
+            android:name="idNote"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="date"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="account"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="value"
+            android:defaultValue="0.0"
+            app:argType="float" />
+        <argument
+            android:name="details"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllExpensesFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.expense.allNotes.ViewAllExpensesFragment"
+        android:label="ViewAllExpensesFragment"
+        tools:layout="@layout/fragment_view_transaction" >
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="finishDate"
+            app:argType="long" />
+        <argument
+            android:name="accountName"
+            app:argType="string" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAllExpensesFragment_to_addEditExpenseTransactionFragment"
+            app:destination="@id/addEditExpenseTransactionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditIncomeTransactionFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.income.addEdit.AddEditIncomeTransactionFragment"
+        android:label="AddEditIncomeTransactionFragment"
+        tools:layout="@layout/fragment_add_edit_transaction">
+        <argument
+            android:name="idNote"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="date"
+            app:argType="long"
+            android:defaultValue="1715004124749L" />
+        <argument
+            android:name="account"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="value"
+            android:defaultValue="0.0"
+            app:argType="float" />
+        <argument
+            android:name="details"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllIncomesFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.income.allNotes.ViewAllIncomesFragment"
+        android:label="ViewAllIncomesFragment"
+        tools:layout="@layout/fragment_view_transaction" >
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="finishDate"
+            app:argType="long" />
+        <argument
+            android:name="accountName"
+            app:argType="string" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAllIncomesFragment_to_addEditIncomeTransactionFragment"
+            app:destination="@id/addEditIncomeTransactionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditBudgetFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.budget.addEdit.AddEditBudgetFragment"
+        android:label="AddEditBudgetFragment"
+        tools:layout="@layout/fragment_add_edit_transaction">
+        <argument
+            android:name="idNote"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="startDate"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="finishDate"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="value"
+            android:defaultValue="0.0"
+            app:argType="float" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllBudgetsFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.budget.allNotes.ViewAllBudgetsFragment"
+        android:label="ViewAllBudgetsFragment"
+        tools:layout="@layout/fragment_view_transaction" >
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="finishDate"
+            app:argType="long" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAllBudgetsFragment_to_addEditBudgetTransactionFragment"
+            app:destination="@id/addEditBudgetFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditDebtFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.debt.addEdit.AddEditDebtFragment"
+        android:label="AddEditDebtFragment"
+        tools:layout="@layout/fragment_add_edit_debt">
+        <argument
+            android:name="idNote"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="startDate"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="finishDate"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="account"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="ownerRole"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="nameDebtorOrCreditor"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="value"
+            android:defaultValue="0.0"
+            app:argType="float" />
+        <argument
+            android:name="details"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllDebtsFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.debt.allNotes.ViewAllDebtsFragment"
+        android:label="ViewAllDebtsFragment"
+        tools:layout="@layout/fragment_view_transaction">
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="finishDate"
+            app:argType="long" />
+        <argument
+            android:name="nameDebtorOrCreditor"
+            app:argType="string" />
+        <argument
+            android:name="ownerRole"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAllDebtsFragment_to_addEditDebtFragment"
+            app:destination="@id/addEditDebtFragment" />
+        <action
+            android:id="@+id/action_viewAllDebtsFragment_to_viewPayForDebtFragment"
+            app:destination="@id/viewPayForDebtFragment" />
+        <argument
+            android:name="accountName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPayForDebtFragment"
+        android:name="com.proger.cashtracker.ui.screens.tabs.debt.allContributions.ViewPayForDebtFragment"
+        android:label="ViewPayForDebtFragment"
+        tools:layout="@layout/fragment_view_transaction">
+        <argument
+            android:name="debtId"
+            app:argType="long" />
+        <argument
+            android:name="roleOwner"
+            app:argType="string" />
+        <argument
+            android:name="debt"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.proger.cashtracker.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
